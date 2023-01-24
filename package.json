@@ -13,6 +13,7 @@
     "@tanstack/react-query": "^4.20.4",
     "@tanstack/react-query-devtools": "^4.20.4",
     "axios": "^1.2.1",
+    "cookie": "^0.5.0",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
     "evo-calendar": "^1.1.3",

@@ -4,7 +4,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Context from '../../context/Context'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import Link from 'next/Link';
+import Link from 'next/link';
 import { AiFillDelete } from 'react-icons/ai'
 import { toast } from 'react-toastify';
 export default function Calender() {

@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 
 export default function VerifyOTP() {
     const router = useRouter()
-    const [data,setdata] = useState({"email":localStorage.getItem('email'),"otp":null})
+    const [data,setdata] = useState({"email":typeof window!=="undefined"?localStorage.getItem('email'):null,"otp":null})
     const onSubmit = async () =>{
         await axios.post("http://127.0.0.1:8000/api/v1/VerifyOTP/",data).then((response)=>{
             router.push("/JOINUS")

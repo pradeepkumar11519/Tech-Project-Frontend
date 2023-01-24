@@ -2,7 +2,6 @@ import React from "react";
 import { AiFillCloseSquare } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Dropdown from "./Dropdown";
 import { useContext } from "react";
 import Context from "../context/Context";
 import { ToastContainer, toast } from "react-toastify";
