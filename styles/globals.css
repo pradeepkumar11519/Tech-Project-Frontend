@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.smenu{
+    right:0%;
+}
+
+.smenu1{
+    left:0;
+}
