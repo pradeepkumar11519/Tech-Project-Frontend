@@ -43,15 +43,15 @@ export default function Compete() {
 						if(e.target.value!=="ALL"){
 							
 								
-								setnexturl(`https://techprojectbackend.pythonanywhere.com/api/v1/ListAllContest/?search=` + e.target.value)
-								nexturl = `https://techprojectbackend.pythonanywhere.com/api/v1/ListAllContest/?search=` + e.target.value
+								setnexturl(`http://pradeep.pythonanywhere.com/api/v1/ListAllContest/?search=` + e.target.value)
+								nexturl = `http://pradeep.pythonanywhere.com/api/v1/ListAllContest/?search=` + e.target.value
 							
 							
 						}
 						else{
 							
-							setnexturl(`https://techprojectbackend.pythonanywhere.com/api/v1/ListAllContest/`)
-							nexturl = `https://techprojectbackend.pythonanywhere.com/api/v1/ListAllContest/`
+							setnexturl(`http://pradeep.pythonanywhere.com/api/v1/ListAllContest/`)
+							nexturl = `http://pradeep.pythonanywhere.com/api/v1/ListAllContest/`
 							
 						}
 						

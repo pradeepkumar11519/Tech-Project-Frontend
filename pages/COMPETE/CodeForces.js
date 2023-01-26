@@ -16,8 +16,8 @@ export default function CodeForces() {
 		return fetchAllCodeForcesContests(nexturl)
 	}, {
 		onSuccess: (data) => {
-            setnexturl("https://techprojectbackend.pythonanywhere.com/api/v1/ListAllCodeForcesContest/")
-            nexturl = "https://techprojectbackend.pythonanywhere.com/api/v1/ListAllCodeForcesContest/"
+            setnexturl("http://pradeep.pythonanywhere.com/api/v1/ListAllCodeForcesContest/")
+            nexturl = "http://pradeep.pythonanywhere.com/api/v1/ListAllCodeForcesContest/"
 			test1.mutate(nexturl)
 		},
 		refetchOnWindowFocus: false,
@@ -30,7 +30,7 @@ export default function CodeForces() {
 }
 
 const fetchAllCodeForcesContests = async (nexturl) => {
-	return axios.get('https://techprojectbackend.pythonanywhere.com/api/v1/ListCodeForcesContest/').then((response) => {
+	return axios.get('http://pradeep.pythonanywhere.com/api/v1/ListCodeForcesContest/').then((response) => {
 		return response.data
 	})
 }

@@ -2,13 +2,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { QueryClient, dehydrate, useQuery, useMutation } from '@tanstack/react-query'
-import { BsFillCalendarDateFill,AiFillDelete } from 'react-icons/bs'
+import { BsFillCalendarDateFill, AiFillDelete } from 'react-icons/bs'
 import axios from 'axios'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import GridLoader from "react-spinners/GridLoader";
 import { useContext, useState, useEffect } from 'react'
 import Context from '../context/Context'
 import { toast } from 'react-toastify'
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 export default function TableElements({ AllContests }) {
 	const { invert, Contests, setContests, authtoken, AllCalenderContest, user } = useContext(Context)
 	let { nexturl, setnexturl } = useContext(Context)
@@ -16,7 +18,7 @@ export default function TableElements({ AllContests }) {
 	const [CalendarIcon, setCalenderIcon] = useState(null)
 	let [count, setcount] = useState(0)
 	const TestResult = useQuery(['TestResult'], () => {
-		return axios.get('https://techprojectbackend.pythonanywhere.com/api/v1/AddToCalender/', {
+		return axios.get('http://pradeep.pythonanywhere.com/api/v1/AddToCalender/', {
 			headers: {
 				Authorization: 'Bearer ' + authtoken.access_token
 			}
@@ -187,27 +189,34 @@ export default function TableElements({ AllContests }) {
 
 														>
 															<div id={contest.id} className='flex justify-end md:justify-center h-full items-center align-middle  my-auto'>
-																<BsFillCalendarDateFill className='cursor-pointer my-auto w-6 h-6' onClick={async () => {
-																	
-																	await axios.post(`https://techprojectbackend.pythonanywhere.com/api/v1/AddToCalender/`, {
-																		contest: contest.id
-																	}, {
-																		headers: {
-																			Authorization: 'Bearer ' + authtoken.access_token
-																		}
-																	}).then((response) => {
-																		// document.getElementById(contest.id).style.display = "none"
-																		toast.success('Added To Calender')
-																	}).catch((er) => {
-																		if(er?.response?.data?.contest[0]){
-																			toast.error("calender with this contest already exists.")
-																		}
-																		else{
+																{!(user && authtoken) ? (
+<Tippy content="Login To Add To Your Calender"><button><BsFillCalendarDateFill className='cursor-pointer my-auto w-6 h-6' /></button></Tippy>
 
-																			toast.error('Couldnt Add To Calender Retry After SomeTime')																}
-																		
-																	})
-																}} />
+																) : (
+																	<BsFillCalendarDateFill className='cursor-pointer my-auto w-6 h-6' onClick={async () => {
+
+																		await axios.post(`http://pradeep.pythonanywhere.com/api/v1/AddToCalender/`, {
+																			contest: contest.id
+																		}, {
+																			headers: {
+																				Authorization: 'Bearer ' + authtoken.access_token
+																			}
+																		}).then((response) => {
+																			// document.getElementById(contest.id).style.display = "none"
+																			toast.success('Added To Calender')
+																		}).catch((er) => {
+																			if (er?.response?.data?.contest[0]) {
+																				toast.error("calender with this contest already exists.")
+																			}
+																			else {
+
+																				toast.error('Couldnt Add To Calender Retry After SomeTime')
+																			}
+
+																		})
+																	}} />
+																)}
+
 															</div>
 
 

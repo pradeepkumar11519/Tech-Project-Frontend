@@ -74,7 +74,7 @@ export default function SignupForm() {
 
 const CreateUser = (user) => {
 
-	return axios.post('https://techprojectbackend.pythonanywhere.com/api/v1/Signup/', user).then((response)=>{
+	return axios.post('http://pradeep.pythonanywhere.com/api/v1/Signup/', user).then((response)=>{
 		return response.data
 	})
 }

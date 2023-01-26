@@ -48,9 +48,7 @@ export default function Dropdown({children}) {
                         
                         
                       
-                        <li className='my-2 text-xl '>
-                            <Link href="/SIGNUP"><div className={`text-white ${router.pathname==="/COMPETE/Clist"?"text-rose-500":""}`}>SIGNUP</div></Link>
-                        </li>
+                        
                     
                     </ul>
                     

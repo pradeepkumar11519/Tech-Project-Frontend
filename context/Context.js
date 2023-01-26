@@ -17,7 +17,7 @@ export const ContextProvider = ({ children }) => {
     const [Contests, setContests] = useState([])
     const [CalenderContest,setCalenderContest] = useState(null)
     const [AllCalenderContest,setAllCalenderContest] = useState([])
-    let [nexturl, setnexturl] = useState('https://techprojectbackend.pythonanywhere.com/api/v1/ListAllContest/')
+    let [nexturl, setnexturl] = useState('http://pradeep.pythonanywhere.com/api/v1/ListAllContest/')
     const openoffcanvas = () => {
 
         document.getElementById('offcanvas').classList.toggle('smenu1')
@@ -37,7 +37,7 @@ export const ContextProvider = ({ children }) => {
     }
     useEffect(()=>{
         if(router.pathname!=="/COMPETE"){
-            setnexturl('https://techprojectbackend.pythonanywhere.com/api/v1/ListAllContest/')
+            setnexturl('http://pradeep.pythonanywhere.com/api/v1/ListAllContest/')
         }
         
     },[router.pathname])
