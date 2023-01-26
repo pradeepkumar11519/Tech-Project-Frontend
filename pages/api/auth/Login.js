@@ -1,7 +1,7 @@
 import axios from 'axios'
 import cookie from 'cookie'
 export default async function Login(req, res) {
-    axios.post('http://pradeep.pythonanywhere.com/api/v1/Login/', req.body, {
+    axios.post('https://pradeep.pythonanywhere.com/api/v1/Login/', req.body, {
         withCredentials: true,
     }).then((response) => {
         

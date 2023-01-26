@@ -15,8 +15,8 @@ export default function Clist() {
 		return fetchAllClistContests(nexturl)
 	}, {
 		onSuccess: (data) => {
-            setnexturl("http://pradeep.pythonanywhere.com/api/v1/ListAllClistAllContest/")
-            nexturl = "http://pradeep.pythonanywhere.com/api/v1/ListAllClistAllContest/"
+            setnexturl("https://pradeep.pythonanywhere.com/api/v1/ListAllClistAllContest/")
+            nexturl = "https://pradeep.pythonanywhere.com/api/v1/ListAllClistAllContest/"
 			test1.mutate(nexturl)
 		},
 		refetchOnWindowFocus: false,
@@ -29,7 +29,7 @@ export default function Clist() {
 }
 
 const fetchAllClistContests = async (nexturl) => {
-	return axios.get('http://pradeep.pythonanywhere.com/api/v1/ListClistAllContest/').then((response) => {
+	return axios.get('https://pradeep.pythonanywhere.com/api/v1/ListClistAllContest/').then((response) => {
 		return response.data
 	})
 }

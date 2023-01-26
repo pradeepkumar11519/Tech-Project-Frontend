@@ -41,7 +41,7 @@ export default function Calender() {
 					setloading(true)
 
 					await axios.post
-						('http://pradeep.pythonanywhere.com/api/v1/ListCalenderContests/', {
+						('https://pradeep.pythonanywhere.com/api/v1/ListCalenderContests/', {
 							day: value.toString().slice(8, 10),
 							month: value.toString().slice(4, 7),
 							year: value.toString().slice(11, 15)
@@ -104,7 +104,7 @@ export default function Calender() {
 
 
 const fetchCalenderContests = async () => {
-	return axios.get('http://pradeep.pythonanywhere.com/api/v1/ListTodaysCalender/', {
+	return axios.get('https://pradeep.pythonanywhere.com/api/v1/ListTodaysCalender/', {
 		headers: {
 			Authorization: 'Bearer ' + localStorage.getItem('access_token')
 		}
@@ -114,7 +114,7 @@ const fetchCalenderContests = async () => {
 }
 
 const useDeleteCalender = async (id) => {
-	return axios.delete(`http://pradeep.pythonanywhere.com/api/v1/Delete_Calender/${id}`, {
+	return axios.delete(`https://pradeep.pythonanywhere.com/api/v1/Delete_Calender/${id}`, {
 		headers: {
 			Authorization: 'Bearer ' + localStorage.getItem('access_token')
 		}

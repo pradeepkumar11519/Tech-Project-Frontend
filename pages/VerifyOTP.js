@@ -7,7 +7,7 @@ export default function VerifyOTP() {
     const router = useRouter()
     const [data,setdata] = useState({"email":typeof window!=="undefined"?localStorage.getItem('email'):null,"otp":null})
     const onSubmit = async () =>{
-        await axios.post("http://pradeep.pythonanywhere.com/api/v1/VerifyOTP/",data).then((response)=>{
+        await axios.post("https://pradeep.pythonanywhere.com/api/v1/VerifyOTP/",data).then((response)=>{
             router.push("/JOINUS")
             toast.success('HEY!!! You Have Sigged In Succesfully')
         }).catch((e)=>{

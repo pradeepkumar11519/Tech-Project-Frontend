@@ -18,7 +18,7 @@ export default function TableElements({ AllContests }) {
 	const [CalendarIcon, setCalenderIcon] = useState(null)
 	let [count, setcount] = useState(0)
 	const TestResult = useQuery(['TestResult'], () => {
-		return axios.get('http://pradeep.pythonanywhere.com/api/v1/AddToCalender/', {
+		return axios.get('https://pradeep.pythonanywhere.com/api/v1/AddToCalender/', {
 			headers: {
 				Authorization: 'Bearer ' + authtoken.access_token
 			}
@@ -195,7 +195,7 @@ export default function TableElements({ AllContests }) {
 																) : (
 																	<BsFillCalendarDateFill className='cursor-pointer my-auto w-6 h-6' onClick={async () => {
 
-																		await axios.post(`http://pradeep.pythonanywhere.com/api/v1/AddToCalender/`, {
+																		await axios.post(`https://pradeep.pythonanywhere.com/api/v1/AddToCalender/`, {
 																			contest: contest.id
 																		}, {
 																			headers: {
