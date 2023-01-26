@@ -6,6 +6,8 @@ import StyledText from '../components/StyledText'
 import Context from '../context/Context'
 import Home1 from '../public/images/home.webp'
 import Image from 'next/image'
+import home1 from '../public/images/home.webp'
+ 
 export default function Home() {
 	const { invert } = useContext(Context)
 	return (
@@ -14,7 +16,8 @@ export default function Home() {
 				<h1 className='text-5xl font-[900] text-center'><SmokeTextAnimation/></h1>
 			</div>
 			
-			<div className='w-full  translate-y-[100px] z-[-10] bg-black flex justify-center mx-auto'><Image layout="responsive" className="pt-32 invert z-[-10] bg-transparent w-[80%]" src="/images/home.webp" placeholder="blur"/></div>
+			<div className='w-full  translate-y-[100px] bg-black z-[-10]  flex justify-center mx-auto'>
+				<div className="pt-32 translate-y-[] invert z-[-10] bg-transparent w-[80%]"><Image   src={home1} placeholder="blur"/></div></div>
 
 		</div>
 	)
