@@ -14,7 +14,7 @@ export default function Home() {
 				<h1 className='text-5xl font-[900] text-center'><SmokeTextAnimation/></h1>
 			</div>
 			
-			<div className='w-full  translate-y-[100px] z-[-10] bg-black flex justify-center mx-auto'><img layout="responsive" className="pt-32 invert z-[-10] bg-transparent w-[80%]" src="/images/home.webp" placeholder="blur"/></div>
+			<div className='w-full  translate-y-[100px] z-[-10] bg-black flex justify-center mx-auto'><Image layout="responsive" className="pt-32 invert z-[-10] bg-transparent w-[80%]" src="/images/home.webp" placeholder="blur"/></div>
 
 		</div>
 	)
